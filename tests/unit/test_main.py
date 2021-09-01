@@ -1,9 +1,9 @@
 import unittest
-from redhat_interview_interview.main import *
+from redhat_interview.main import *
 from unittest.mock import patch, MagicMock
 
 
-@patch("redhat_interview_interview.main.dnf", MagicMock(), create=True)
+@patch("redhat_interview.main.dnf", MagicMock(), create=True)
 class TestMain(unittest.TestCase):
     class GetHawkeyQueryObject:
         class _dotmap(dict):
@@ -34,7 +34,7 @@ class TestMain(unittest.TestCase):
         assert main() is None
 
     @patch(
-        "redhat_interview_interview.main.get_installed_dnf_packages",
+        "redhat_interview.main.get_installed_dnf_packages",
         GetHawkeyQueryObject,
     )
     def test_main_with_kernel_versions(self):
