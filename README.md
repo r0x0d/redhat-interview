@@ -15,16 +15,17 @@ $ python redhat_interview/main.py
 Or, if you prefer, you could use `make` to run the same exactly command.
 
 ```bash
-$ make
+$ make # Same as the command above
 ```
+
+For default, we use `python` as the executable choice when running the `make` command, and it depends on wether you have `python2` or `python3` linked as `python` in your current system. 
 
 Also, there is a recording showing the output of the above command being ran in my own machine.
 [![asciicast](https://asciinema.org/a/3TBTGdzXFnPwC8zpTChD1HHeo.svg)](https://asciinema.org/a/3TBTGdzXFnPwC8zpTChD1HHeo)
 
 As a counter example, this is a record of the above command being ran with python2 (I don't have the `python2-dnf` pacakge installed on my machine) and failling immediatly as it cannot recognize the `dnf` module being imported.
 
-[![asciicast](https://asciinema.org/a/xvAQXgm6f47JOyW69avXQX9ri.svg)](https://asciinema.org/a/xvAQXgm6f47JOyW69avXQX9ri)
-
+[![asciicast](https://asciinema.org/a/xvAQXgm6f47JOyW69avXQX9ri.svg)](https://asciinema.org/a/xvAQXgm6f47JOyW69avXQX9ri) 
 
 
 # Common problems found during the development

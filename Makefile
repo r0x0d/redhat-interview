@@ -1,4 +1,4 @@
-PYTHON_INTERPRETER=python3
+PYTHON_INTERPRETER=python
 SOURCE_PROJECT=redhat_interview_interview
 
 all:
