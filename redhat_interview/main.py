@@ -48,11 +48,15 @@ def main():
     # Filter for the specific package definied in DNF_SEARCH_PACKAGE_NAME constant
     filtered_packages = packages.filter(name=DNF_SEARCH_PACKAGE_NAME)
 
-    # Loop through the results for the filtered package and output the version collected from the hawkey
-    print("Found a total of '{}' versions installed\n".format(len(filtered_packages)))
-    for package in filtered_packages:
-        print(package.version)
+    # Calculate the total of packages returned by the query
+    total_of_packages = len(filtered_packages)
 
+    # Loop through the results for the filtered package and output the version collected from the hawkey
+    print("Found a total of '{}' versions installed\n".format(total_of_packages))
+
+    if total_of_packages > 0:
+        for package in filtered_packages:
+            print(package.version)
 
 if __name__ == "__main__":
     main()
