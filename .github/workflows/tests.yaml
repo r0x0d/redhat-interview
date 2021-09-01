@@ -7,9 +7,9 @@ on:
     branches: [ main ]
 
 jobs:
-  runs-on: ubuntu-latest
   centos_unit_test:
     name: centos-${{ matrix.centos_ver }}
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         centos_ver: [8]
@@ -35,6 +35,7 @@ jobs:
 
   fedora_unit_test:
     name: fedora-${{ matrix.fedora_ver }}
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         fedora_ver: [34]
