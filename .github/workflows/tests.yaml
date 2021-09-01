@@ -8,7 +8,7 @@ on:
 
 jobs:
   centos_unit_test:
-    name: centos-${{ matrix.centos_ver }}
+    name: CentOS ${{ matrix.centos_ver }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -27,14 +27,14 @@ jobs:
           load: true
           context: .
           file: ./dockerfiles/centos${{ matrix.centos_ver }}.Dockerfile
-          tags: centos${{ matrix.centos_ver }}
+          tags: centos-${{ matrix.centos_ver }}
 
       - name: Run unit tests in container
         run: |
-          docker run centos${{ matrix.centos_ver }} make test
+          docker run centos-${{ matrix.centos_ver }} make test
 
   fedora_unit_test:
-    name: fedora-${{ matrix.fedora_ver }}
+    name: Fedora ${{ matrix.fedora_ver }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -53,8 +53,8 @@ jobs:
           load: true
           context: .
           file: ./dockerfiles/fedora${{ matrix.fedora_ver }}.Dockerfile
-          tags: fedora${{ matrix.fedora_ver }}
+          tags: fedora-${{ matrix.fedora_ver }}
 
       - name: Run unit tests in container
         run: |
-          docker run fedora${{ matrix.fedora_ver }} make test
+          docker run fedora-${{ matrix.fedora_ver }} make test
