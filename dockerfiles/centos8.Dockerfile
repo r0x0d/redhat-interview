@@ -1,4 +1,4 @@
-FROM fedora:34 as base
+FROM fedora:42 as base
 
 ENV PYTHON python3
 ENV PIP pip3
